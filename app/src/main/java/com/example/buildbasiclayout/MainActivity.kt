@@ -8,9 +8,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,20 +19,21 @@ import androidx.compose.ui.unit.sp
 import com.example.buildbasiclayout.ui.theme.BuildBasicLayoutTheme
 
 class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) { //entry point to this Android app and calls other functions to build the user interface.
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {
+        setContent {    //used to define your layout through composable functions.
             BuildBasicLayoutTheme {
 //                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 //                    Greeting(
 //                        name = "Android",
 //                        modifier = Modifier.padding(innerPadding)
 //                    )
-                Surface (
+                Surface (   //a container that represents a section of UI where you can alter the appearance, such as the background color or border.
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
-                ){
+                )
+                {
                     GreetingImage(message = "Happy Birthday Sam!", from = "from Emma")
                 }
             }
